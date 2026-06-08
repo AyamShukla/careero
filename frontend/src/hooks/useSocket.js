@@ -8,7 +8,11 @@ const useSocket = (userId) => {
   useEffect(() => {
     if (!userId) return;
 
-    socketRef.current = io("http://localhost:5000", {
+    const socketUrl = import.meta.env.MODE === "development"
+      ? "http://localhost:5000"
+      : window.location.origin;
+
+    socketRef.current = io(socketUrl, {
       query: { userId },
       withCredentials: true,
     });
