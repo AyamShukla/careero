@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light, dark;
+}
+
+/* Fix input borders */
+.input {
+  border-width: 1px !important;
+  border-color: var(--fallback-bc, oklch(var(--bc)/0.2)) !important;
+}
+
+.input:focus {
+  border-color: var(--fallback-p, oklch(var(--p))) !important;
+  outline: none !important;
+}
+
+.textarea {
+  border-width: 1px !important;
+  border-color: var(--fallback-bc, oklch(var(--bc)/0.2)) !important;
+}
+
+.textarea:focus {
+  border-color: var(--fallback-p, oklch(var(--p))) !important;
+  outline: none !important;
+}
