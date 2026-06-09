@@ -7,7 +7,6 @@ import { Server } from "socket.io";
 import { connectDB } from "./config/db.js";
 import path from "path";
 import { fileURLToPath } from "url";
-
 import authRoutes from "./routes/auth.route.js";
 import userRoutes from "./routes/user.route.js";
 import postRoutes from "./routes/post.route.js";
@@ -73,7 +72,7 @@ app.use("/api/v1/messages", messageRoutes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.get("*", (req, res) => {
+  app.get("*splat", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
   });
 }
